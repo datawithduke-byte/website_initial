@@ -1,0 +1,13 @@
+---
+import Base from "../../layouts/Base.astro";
+---
+<Base title="Contact">
+  <h1>Contact</h1>
+  <p>Start with a mail link: <a href="mailto:you@example.com">you@example.com</a>. Or keep this simple form:</p>
+  <form action="https://formspree.io/f/yourid" method="POST" class="card">
+    <label>Name<br/><input type="text" name="name" required /></label><br/>
+    <label>Email<br/><input type="email" name="email" required /></label><br/>
+    <label>Message<br/><textarea name="message" rows="5" required></textarea></label><br/>
+    <button class="btn" type="submit">Send</button>
+  </form>
+</Base>

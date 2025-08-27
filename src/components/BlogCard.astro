@@ -1,0 +1,9 @@
+---
+const { post } = Astro.props;
+---
+<article class="card">
+  <a href={post.url}><h3 style="margin-top:0;">{post.title}</h3></a>
+  <p style="margin: 6px 0; color: var(--muted);">{new Date(post.date).toLocaleDateString()}</p>
+  <p>{post.summary}</p>
+  {post.external && <p style="color:var(--muted); font-size: 0.9em;">External post</p>}
+</article>

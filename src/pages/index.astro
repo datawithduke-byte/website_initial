@@ -1,0 +1,57 @@
+---
+import Base from "../layouts/Base.astro";
+import EpisodeCard from "../components/EpisodeCard.astro";
+import BlogCard from "../components/BlogCard.astro";
+import { getEpisodes, getBlogPosts } from "../utils/collections.js";
+
+const episodes = await getEpisodes();
+const latest = episodes[0];
+const posts = (await getBlogPosts()).slice(0,3);
+const YT_ID = latest?.youtubeId || "dQw4w9WgXcQ";
+---
+<Base title="Home" description="Podcast + blog hub">
+  <section class="grid" style="grid-template-columns: 2fr 1fr;">
+    <div class="card">
+      <h2 style="margin-top:0;">Latest Episode</h2>
+      <div style="aspect-ratio:16/9; width:100%;">
+        <iframe style="width:100%; height:100%; border:0; border-radius:12px;"
+          src={"https://www.youtube.com/embed/" + YT_ID}
+          title="Podcast episode" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      {latest && (
+        <div style="margin-top:12px;">
+          <h3 style="margin:0;">{latest.title}</h3>
+          <p style="color:var(--muted);">{new Date(latest.date).toLocaleDateString()}</p>
+          <p>{latest.summary}</p>
+          <a class="btn" href={latest.url}>Show notes</a>
+        </div>
+      )}
+    </div>
+    <aside class="grid" style="grid-template-rows: auto auto;">
+      <div class="card">
+        <h3 style="margin-top:0;">Recent Blog Posts</h3>
+        {posts.map(p => <BlogCard post={p} />)}
+        <a class="btn" href="/blog/">View all</a>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:0;">Latest on LinkedIn</h3>
+        <p style="color:var(--muted); margin-top:-6px;">Replace URN below with your post</p>
+        <div style="aspect-ratio: 3/4; width:100%;">
+          <iframe style="width:100%; height:100%; border:0; border-radius:12px;"
+            src="https://www.linkedin.com/embed/feed/update/URN_ID"
+            title="LinkedIn Post"></iframe>
+        </div>
+      </div>
+    </aside>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>Episodes</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+      {episodes.slice(0,6).map(e => <EpisodeCard episode={e} />)}
+    </div>
+    <p style="margin-top:12px;"><a class="btn" href="/episodes/">Browse all episodes</a></p>
+  </section>
+</Base>

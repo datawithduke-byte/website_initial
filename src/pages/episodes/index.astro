@@ -1,0 +1,12 @@
+---
+import Base from "../../layouts/Base.astro";
+import EpisodeCard from "../../components/EpisodeCard.astro";
+import { getEpisodes } from "../../utils/collections.js";
+const episodes = await getEpisodes();
+---
+<Base title="Episodes">
+  <h1>Episodes</h1>
+  <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+    {episodes.map(e => <EpisodeCard episode={e} />)}
+  </div>
+</Base>
