@@ -7,7 +7,7 @@ import { getEpisodes, getBlogPosts } from "../utils/collections.js";
 const episodes = await getEpisodes();
 const latest = episodes[0];
 const posts = (await getBlogPosts()).slice(0,3);
-const YT_ID = latest?.youtubeId || "dQw4w9WgXcQ";
+const YT_ID = latest?.youtubeId || "CjciqTea7Nk";
 ---
 <Base title="Home" description="Podcast + blog hub">
   <section class="grid" style="grid-template-columns: 2fr 1fr;">
