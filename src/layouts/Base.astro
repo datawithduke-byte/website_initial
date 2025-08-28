@@ -14,7 +14,7 @@ const { title = 'Home', description = 'Podcast & portfolio hub', } = Astro.props
   <body>
     <header class="site">
       <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
-        <a href="/"><img class="logo" src="/brand/logo.svg" alt="Logo" /></a>
+        <a href="/"><img class="logo" src="/brand/logo.png" alt="Logo" /></a>
         <nav style="display:flex; gap:16px;">
           <a href="/episodes/">Episodes</a>
           <a href="/blog/">Blog</a>
@@ -28,7 +28,7 @@ const { title = 'Home', description = 'Podcast & portfolio hub', } = Astro.props
     </main>
     <footer class="site">
       <div class="container">
-        <p>&copy; <span id="year"></span> Your Brand. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Data with Duke. All rights reserved.</p>
       </div>
       <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
