@@ -3,15 +3,36 @@ function parseDate(d) {
   return /^\d{4}-\d{2}-\d{2}$/.test(String(d)) ? new Date(d).getTime() : 0;
 }
 
+function toTimestamp(d) {
+  // If Astro/gray-matter parsed it as a Date object
+  if (d instanceof Date) return d.getTime();
+
+  // If it's a string, parse robustly
+  if (typeof d === 'string') {
+    const s = d.trim();
+    const t = Date.parse(s); // handles YYYY-MM-DD safely
+    return Number.isNaN(t) ? 0 : t;
+  }
+
+  // Anything else: treat as very old
+  return 0;
+}
+
 export async function getEpisodes() {
   const modules = import.meta.glob('/src/pages/episodes/*.md', { eager: true });
   return Object.entries(modules)
     .map(([path, mod]) => {
-      const url = path.replace('/src/pages', '').replace('.md','/');
       const fm = mod.frontmatter || {};
-      return { url, ...fm, Content: mod.default, _ts: parseDate(fm.date) };
+      return {
+        url: path.replace('/src/pages', '').replace('.md', '/'),
+        ...fm,
+        Content: mod.default,
+        _ts: toTimestamp(fm.date),
+        _slug: path.toLowerCase(),
+      };
     })
-    .sort((a,b) => b._ts - a._ts);
+    // date desc, then slug asc for stability
+    .sort((a, b) => (b._ts - a._ts) || (a._slug > b._slug ? 1 : -1));
 }
 
 export async function getBlogPosts() {

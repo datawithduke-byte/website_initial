@@ -5,9 +5,10 @@ import BlogCard from "../components/BlogCard.astro";
 import { getEpisodes, getBlogPosts } from "../utils/collections.js";
 
 const episodes = await getEpisodes();
-const latest = episodes[0];
 const posts = (await getBlogPosts()).slice(0,3);
-const YT_ID = latest?.youtubeId || "CjciqTea7Nk";
+const latestWithVideo = episodes.find(e => !!e.youtubeId);
+const YT_ID = latestWithVideo?.youtubeId || "CjciqTea7Nk";
+const latest = latestWithVideo;
 ---
 <Base title="Home" description="Podcast + blog hub">
   <section class="grid" style="grid-template-columns: 2fr 1fr;">
