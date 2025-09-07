@@ -1,0 +1,162 @@
+---
+export const prerender = true;
+// Optional: receive props if you want to pass nav items in
+// const { nav = [] } = Astro.props;
+---
+
+<header id="site-header" class="header" data-state="expanded" role="banner">
+  <div class="header__inner">
+    <a href="/" class="brand" aria-label="Data with Duke home">
+      <!-- Replace src, width, height with your actual logo and intrinsic size -->
+      <img
+        src="/brand/logo.png"
+        alt="Data with Duke"
+        width="1024"
+        height="1024"
+        class="brand__logo"
+        decoding="async"
+        loading="eager"
+      />
+      <span class="brand__text">Data with Duke</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="/episodes">Episodes</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Sentinel used to detect scroll out-of-hero -->
+<div id="shrink-sentinel" aria-hidden="true"></div>
+
+<style>
+  :root {
+    --header-max-width: 1100px;
+    /* Tweak these two to set your sizes */
+    --logo-size-expanded: clamp(120px, 10vw, 120px);
+    --logo-size-compact: clamp(42px, 4vw, 42px);
+
+    --brand-text-expanded: clamp(1.25rem, 2.2vw, 2rem);
+    --brand-text-compact: clamp(1rem, 1.4vw, 1.25rem);
+
+    --header-padding-expanded: clamp(16px, 3.5vw, 28px);
+    --header-padding-compact: 10px;
+
+    /* --bg: var(--color-bg, #0b0f14);
+    --card: var(--color-card, #121821);
+    --text: var(--color-text, #e6eefb);
+    --border: var(--color-border, #223044); */
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    inset-inline: 0;
+    z-index: 50;
+    background: linear-gradient(180deg, var(--card), rgba(0,0,0,0));
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 60%, transparent);
+    transition: padding 220ms ease, background-color 220ms ease, border-color 220ms ease;
+  }
+
+  .header__inner {
+    margin: 0 auto;
+    max-width: var(--header-max-width);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding-inline: 16px;
+  }
+
+  /* Expanded vs compact states driven by data-state */
+  .header[data-state="expanded"] .header__inner {
+    padding-block: var(--header-padding-expanded);
+  }
+  .header[data-state="compact"] .header__inner {
+    padding-block: var(--header-padding-compact);
+    background: color-mix(in srgb, var(--bg) 16%, transparent);
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .brand__logo {
+    width: var(--logo-size-expanded);
+    height: auto;
+    transition: width 220ms ease, transform 220ms ease;
+  }
+
+  .header[data-state="compact"] .brand__logo {
+    width: var(--logo-size-compact);
+    transform: translateZ(0);
+  }
+
+  .brand__text {
+    color: var(--text);
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: var(--brand-text-expanded);
+    transition: font-size 220ms ease, opacity 220ms ease;
+    white-space: nowrap;
+  }
+
+  .header[data-state="compact"] .brand__text {
+    font-size: var(--brand-text-compact);
+    opacity: 0.95;
+  }
+
+  .nav a {
+    color: var(--text);
+    text-decoration: none;
+    opacity: 0.9;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
+  .nav a:hover {
+    opacity: 1;
+    background: color-mix(in srgb, var(--border) 18%, transparent);
+  }
+
+  /* Sentinel spacing to let the expanded header breathe at top */
+  #shrink-sentinel {
+    block-size: 1px; /* invisible ruler */
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .brand__logo,
+    .brand__text,
+    .header {
+      transition: none !important;
+    }
+  }
+</style>
+
+<script type="module">
+  const header = document.getElementById('site-header');
+  const sentinel = document.getElementById('shrink-sentinel');
+
+  if (header instanceof HTMLElement && sentinel instanceof Element) {
+    const io = new IntersectionObserver((entries) => {
+      header.dataset.state = entries[0].isIntersecting ? 'expanded' : 'compact';
+    }, { rootMargin: '-80px 0px 0px 0px', threshold: [0, 1] });
+    io.observe(sentinel);
+  
+
+  } else {
+    // Fallback to scrollY check
+    const onScroll = () => {
+      header.dataset.state = window.scrollY > 80 ? 'compact' : 'expanded';
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>

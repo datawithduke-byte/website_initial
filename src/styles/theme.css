@@ -2,7 +2,7 @@
   --brand-name: "dwd_brand";
   --brand-primary: #E7E2D3;
   --brand-accent:  #D97944;
-  --bg: #556D6B;
+  --bg: #587472;
   --card: #F5F3EC;
   --text: #2C2C2C;
   --muted: #8FA19F;
@@ -16,11 +16,11 @@ a:hover { text-decoration: underline; }
 .grid { display:grid; gap:16px; }
 .btn {
   display:inline-block; padding:10px 16px; border-radius:10px;
-  background: var(--brand-primary); color:white; border:1px solid var(--border);
+  background: var(--brand-primary); color:var(--text); border:1px solid var(--border);
 }
 .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; }
 .tag { display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#1e1f27; border:1px solid var(--border); color:var(--muted); margin-right:8px; }
 header.site { border-bottom:1px solid var(--border); }
 footer.site { border-top:1px solid var(--border); color:var(--muted); }
 hr { border:0; border-top:1px solid var(--border); margin:24px 0; }
-img.logo { height:32px; width:auto; }
+img.logo { height:42px; width:auto; }

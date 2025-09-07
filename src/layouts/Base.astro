@@ -1,6 +1,7 @@
 ---
 import "../styles/theme.css";
 const { title = 'Home', description = 'Podcast & portfolio hub', } = Astro.props;
+import Header from "../components/Header.astro";
 ---
 <html lang="en">
   <head>
@@ -11,7 +12,9 @@ const { title = 'Home', description = 'Podcast & portfolio hub', } = Astro.props
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
   </head>
-  <body>
+    <body>
+    <Header />
+  <!-- <body>
     <header class="site">
       <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
         <a href="/"><img class="logo" src="/brand/logo.png" alt="Logo" /></a>
@@ -22,15 +25,14 @@ const { title = 'Home', description = 'Podcast & portfolio hub', } = Astro.props
           <a href="/contact/">Contact</a>
         </nav>
       </div>
-    </header>
+    </header> -->
     <main class="container">
       <slot />
     </main>
     <footer class="site">
       <div class="container">
-        <p>&copy; <span id="year"></span> Data with Duke. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Data with Duke. All rights reserved.</p>
       </div>
-      <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
   </body>
 </html>

@@ -2,7 +2,7 @@
 layout: ../../layouts/Base.astro
 title: "Data in your pocket | Data with Duke Ep.2"
 date: 2025-09-07
-summary: "Unearthing the data you generate everyday"
+summary: "Unearthing the data you generate everyday. It's bigger than you even imagine, and companies are earning a fortune off it!"
 tags: ["data", "habits", "data harvesting"]
 youtubeId: "U4-nloIguAc"
 ---
