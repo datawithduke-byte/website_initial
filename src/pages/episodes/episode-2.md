@@ -1,10 +1,10 @@
 ---
 layout: ../../layouts/Base.astro
-title: "Data in your pocket"
+title: "Data in your pocket | Data with Duke Ep.2"
 date: 2025-09-07
 summary: "Unearthing the data you generate everyday"
 tags: ["data", "habits", "data harvesting"]
-youtubeId: "dQw4w9WgXcQ"
+youtubeId: "U4-nloIguAc"
 ---
 ## Watch the video on YouTube
 [![Watch the video](https://img.youtube.com/vi/U4-nloIguAc/0.jpg)](https://youtu.be/U4-nloIguAc)
