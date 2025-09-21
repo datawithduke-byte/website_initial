@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/Base.astro
 title: "Building habits..."
-date: 2025-09-07
+date: 2025-09-14
 summary: "...while building sites, communities and skills. Today I talk about my dream and wish for a brighter future."
 exclusive: true
 external: true
