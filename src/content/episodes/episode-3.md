@@ -3,8 +3,7 @@ layout: ../../layouts/Base.astro
 title: "Tidy Data, Tidy Mind | Data with Duke Ep.3"
 date: 2025-09-21
 summary: "Messy data isn’t just a business problem — it’s your photo library, your receipts, your downloads folder of doom. In this episode of Data with Duke, we look at why tidying your data makes life easier, saves money, and sets the stage for real analysis."
-tags: ["data podcast", "data with duke", "tidy data", "messy data", "data basics", "data literacy", "data organisation", "clean data", "spreadsheets", "excel tips", "google sheets", "data governance", "data culture", "data quality", "data cleaning", "data management", "everyday data", "data careers", "educational podcast", "tech podcast"
-]
+tags: ["data podcast", "data with duke", "tidy data", "messy data", "data basics", "data literacy", "data organisation", "clean data", "spreadsheets", "excel tips", "google sheets", "data governance", "data culture", "data quality", "data cleaning", "data management", "everyday data", "data careers", "educational podcast", "tech podcast"]
 youtubeId: "Kw3oDbOEI8w"
 ---
 ## Watch the video on YouTube

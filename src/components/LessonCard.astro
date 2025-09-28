@@ -1,0 +1,20 @@
+---
+interface Props {
+  lesson: {
+    title: string;
+    date: string;
+    summary: string;
+    url: string;
+    tags?: string[];
+    category: string;
+  };
+}
+
+const { lesson } = Astro.props;
+---
+<article class="card">
+  <a href={lesson.url}><h3 style="margin-top:0;">{lesson.title}</h3></a>
+  <p style="margin: 6px 0; color: var(--muted);">{new Date(lesson.date).toLocaleDateString()}</p>
+  <p>{lesson.summary}</p>
+  <div>{(lesson.tags || []).map((t) => <span class="tag">{t}</span>)}</div>
+</article>

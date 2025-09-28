@@ -6,7 +6,7 @@ const posts = await getBlogPosts();
 ---
 <Base title="Blog">
   <h1>Blog</h1>
-  <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
-    {posts.map(p => <BlogCard post={p} />)}
+  <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));"> 
+    {posts.slice(0, 3).map(p => <BlogCard post={p} />)} 
   </div>
 </Base>

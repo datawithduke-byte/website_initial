@@ -1,9 +1,19 @@
 ---
+interface Props {
+  episode: {
+    title: string;
+    date: string;
+    summary: string;
+    url: string;
+    tags?: string[];
+  };
+}
+
 const { episode } = Astro.props;
 ---
 <article class="card">
   <a href={episode.url}><h3 style="margin-top:0;">{episode.title}</h3></a>
   <p style="margin: 6px 0; color: var(--muted);">{new Date(episode.date).toLocaleDateString()}</p>
   <p>{episode.summary}</p>
-  <div>{(episode.tags || []).map(t => <span class="tag">{t}</span>)}</div>
+  <div>{(episode.tags || []).map((t) => <span class="tag">{t}</span>)}</div>
 </article>

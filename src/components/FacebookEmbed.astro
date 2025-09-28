@@ -1,0 +1,26 @@
+---
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<div id="fb-root"></div>
+
+
+<div class="fb-video" data-href={url} data-show-text="false">
+  <blockquote class="fb-xfbml-parse-ignore" cite={url}>
+  <a href={url}>View this post on Facebook</a>
+  </blockquote>
+</div>
+
+<style>
+  /* Force Facebook embeds to respect container width */
+  .fb-video iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+</style>
+

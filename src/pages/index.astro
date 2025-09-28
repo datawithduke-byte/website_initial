@@ -1,61 +1,88 @@
 ---
 import Base from "../layouts/Base.astro";
 import EpisodeCard from "../components/EpisodeCard.astro";
+import LessonCard from "../components/LessonCard.astro";
 import BlogCard from "../components/BlogCard.astro";
-import { getEpisodes, getBlogPosts } from "../utils/collections.js";
+import { getEpisodes, getBlogPosts, getLessons } from "../utils/collections.js";
+import FacebookEmbed from "../components/FacebookEmbed.astro";
 
 const episodes = await getEpisodes();
+const lessons  = await getLessons();
+
+const latestPodcast = episodes[0]; // already sorted newest first
+const latestLesson  = lessons[0];
 const posts = (await getBlogPosts()).slice(0,3);
-const latestWithVideo = episodes.find(e => !!e.youtubeId);
-const YT_ID = latestWithVideo?.youtubeId || "CjciqTea7Nk";
-const latest = latestWithVideo;
+
+
+const PC_YT_ID = latestPodcast?.youtubeId || "CjciqTea7Nk";
+const LS_YT_ID = latestLesson?.youtubeId || "CjciqTea7Nk";
+
+
 ---
 <Base title="Home" description="Podcast + blog hub">
-  <section class="grid" style="grid-template-columns: 2fr 1fr;">
-    <div class="card">
-      <h2 style="margin-top:0;">Latest Episode</h2>
-      <div style="aspect-ratio:16/9; width:100%;">
-        <iframe style="width:100%; height:100%; border:0; border-radius:12px;"
-          src={"https://www.youtube.com/embed/" + YT_ID}
-          title="Podcast episode" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      {latest && (
-        <div style="margin-top:12px;">
-          <h3 style="margin:0;">{latest.title}</h3>
-          <p style="color:var(--muted);">{new Date(latest.date).toLocaleDateString()}</p>
-          <p>{latest.summary}</p>
-          <a class="btn" href={latest.url}>Show notes</a>
+  <section class="home-layout">
+    <!-- LEFT column: episodes & lessons -->
+    <div>
+      <div class="card">
+        <h2 style="margin-top:0;">Latest Episode</h2>
+        <div style="aspect-ratio:16/9; width:100%;">
+          <iframe style="width:100%; height:100%; border:0; border-radius:12px;"
+            src={"https://www.youtube.com/embed/" + PC_YT_ID}
+            title="Podcast episode" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
         </div>
-      )}
-    </div>
-      <aside class="grid" style="grid-template-rows: auto auto;">
-        <div class="card">
-          <h3 style="margin-top:0;">Recent Blog Posts</h3>
-          {posts.map(p => <BlogCard post={p} />)}
-          <a class="btn" href="/blog/">View all</a>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0;">Latest on Facebook</h3>
-          <div style="width:100%; overflow:hidden; border-radius:12px;">
-            <div id="fb-root"></div>
-            <script async defer crossorigin="anonymous"
-              src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0"></script>
-            <div class="fb-page"
-                data-href="https://www.facebook.com/datawithduke/" 
-                data-tabs="timeline"
-                data-adapt-container-width="true"
-                data-height="600"
-                data-small-header="false"
-                data-hide-cover="false"
-                data-show-facepile="false">
-              <blockquote class="fb-xfbml-parse-ignore" cite="https://www.facebook.com/datawithduke/">
-                <a href="https://www.facebook.com/datawithduke/">Data With Duke on FB</a>
-              </blockquote>
-            </div>
+        {latestPodcast && (
+          <div style="margin-top:12px;">
+            <h3 style="margin:0;">{latestPodcast.title}</h3>
+            <p style="color:var(--muted);">
+              {new Date(latestPodcast.date).toLocaleDateString()}
+            </p>
+            <p>{latestPodcast.summary}</p>
+            <a class="btn" href={latestPodcast.url}>Show notes</a>
           </div>
+        )}
+      </div>
+
+      <div class="card">
+        <h2 style="margin-top:0;">Latest Lesson</h2>
+        <div style="aspect-ratio:16/9; width:100%;">
+          <iframe style="width:100%; height:100%; border:0; border-radius:12px;"
+            src={"https://www.youtube.com/embed/" + LS_YT_ID}
+            title="Lesson video" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
         </div>
-      </aside>
-    </section>
+        {latestLesson && (
+          <div style="margin-top:12px;">
+            <h3 style="margin:0;">{latestLesson.title}</h3>
+            <p style="color:var(--muted);">
+              {new Date(latestLesson.date).toLocaleDateString()}
+            </p>
+            <p>{latestLesson.summary}</p>
+            <a class="btn" href={latestLesson.url}>Show notes</a>
+          </div>
+        )}
+      </div>
+    </div>
+
+
+    <!-- RIGHT column: blog & Facebook -->
+    <aside>
+      <div class="card">
+        <h3 style="margin-top:0;">Recent Blog Posts</h3>
+        {posts.map(p => <BlogCard post={p} />)}
+        <a class="btn" href="/blog/">View all</a>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top:0;">Latest on Facebook</h3>
+        <div style="aspect-ratio: 9/16; overflow:hidden; border-radius:12px;">
+          <FacebookEmbed url="https://www.facebook.com/datawithduke/videos/702261652894021/" />
+        </div>
+      </div>
+    </aside>
+  </section>
   <hr />
     <section>
       <h2>Episodes</h2>

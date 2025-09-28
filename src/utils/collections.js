@@ -19,12 +19,28 @@ function toTimestamp(d) {
 }
 
 export async function getEpisodes() {
-  const modules = import.meta.glob('/src/pages/episodes/*.md', { eager: true });
+  const modules = import.meta.glob('/src/content/episodes/*.md', { eager: true });
   return Object.entries(modules)
     .map(([path, mod]) => {
       const fm = mod.frontmatter || {};
       return {
-        url: path.replace('/src/pages', '').replace('.md', '/'),
+        url: path.replace('/src/content', '').replace('.md', '/'),
+        ...fm,
+        Content: mod.default,
+        _ts: toTimestamp(fm.date),
+        _slug: path.toLowerCase(),
+      };
+    })
+    // date desc, then slug asc for stability
+    .sort((a, b) => (b._ts - a._ts) || (a._slug > b._slug ? 1 : -1));
+}
+export async function getLessons() {
+  const modules = import.meta.glob('/src/content/lessons/*.md', { eager: true });
+  return Object.entries(modules)
+    .map(([path, mod]) => {
+      const fm = mod.frontmatter || {};
+      return {
+        url: path.replace('/src/content', '').replace('.md', '/'),
         ...fm,
         Content: mod.default,
         _ts: toTimestamp(fm.date),

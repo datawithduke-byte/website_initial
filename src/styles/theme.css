@@ -18,6 +18,8 @@ a:hover { text-decoration: underline; }
   display:inline-block; padding:10px 16px; border-radius:10px;
   background: var(--brand-primary); color:var(--text); border:1px solid var(--border);
 }
+.home-layout {display: grid;grid-template-columns: 2fr 1fr;gap: 1rem;max-width: 1200px;margin: 0 auto;}
+@media (max-width: 768px) {.home-layout {grid-template-columns: 1fr;}}
 .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; }
 .tag { display:inline-block; font-size:12px; padding:4px 8px; border-radius:999px; background:#1e1f27; border:1px solid var(--border); color:var(--muted); margin-right:8px; }
 header.site { border-bottom:1px solid var(--border); }

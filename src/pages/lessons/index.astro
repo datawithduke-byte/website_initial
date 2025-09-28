@@ -1,0 +1,12 @@
+---
+import Base from "../../layouts/Base.astro";
+import LessonCard from "../../components/LessonCard.astro";
+import { getLessons } from "../../utils/collections.js";
+const lessons = await getLessons();
+---
+<Base title="Lessons">
+  <h1>Lessons</h1>
+  <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+    {lessons.map(e => <LessonCard lesson={e} />)}
+  </div>
+</Base>

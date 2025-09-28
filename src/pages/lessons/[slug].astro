@@ -1,0 +1,34 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getLessons } from "../../utils/collections.js";
+
+export async function getStaticPaths() {
+  const lessons = await getLessons();
+  return lessons.map(l => ({
+    params: { slug: l.url.split("/").filter(Boolean).pop() },
+    props: { lesson: l }
+  }));
+}
+
+const { lesson } = Astro.props;
+---
+
+<Base title={lesson.title}>
+  <article>
+    <h1>{lesson.title}</h1>
+    <p style="color:var(--muted);">{new Date(lesson.date).toLocaleDateString()}</p>
+    <p>{lesson.summary}</p>
+
+    <div style="aspect-ratio:16/9; width:100%; margin:1rem 0;">
+      <iframe
+        style="width:100%; height:100%; border:0; border-radius:12px;"
+        src={"https://www.youtube.com/embed/" + lesson.youtubeId}
+        title={lesson.title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <lesson.Content />
+  </article>
+</Base>

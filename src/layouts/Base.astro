@@ -1,8 +1,9 @@
 ---
 import "../styles/theme.css";
-const { title = 'Home', description = 'Podcast & portfolio hub', } = Astro.props;
+const { title = 'Home', description = 'Podcast & portfolio hub' } = Astro.props;
 import Header from "../components/Header.astro";
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -12,27 +13,22 @@ import Header from "../components/Header.astro";
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
   </head>
-    <body>
+  <body>
     <Header />
-  <!-- <body>
-    <header class="site">
-      <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px;">
-        <a href="/"><img class="logo" src="/brand/logo.png" alt="Logo" /></a>
-        <nav style="display:flex; gap:16px;">
-          <a href="/episodes/">Episodes</a>
-          <a href="/blog/">Blog</a>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
-        </nav>
-      </div>
-    </header> -->
+
     <main class="container">
       <slot />
     </main>
+
     <footer class="site">
       <div class="container">
         <p>&copy; {new Date().getFullYear()} Data with Duke. All rights reserved.</p>
       </div>
     </footer>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v18.0">
+    </script>
   </body>
 </html>
