@@ -8,7 +8,10 @@ youtubeId: "3TNASbzBNlQ"
 category: "Spreadsheets"
 ---
 ## Watch the video on YouTube
-[![Watch the video](https://img.youtube.com/vi/3TNASbzBNlQ/60.jpg)](https://www.youtube.com/watch?v=3TNASbzBNlQ)
+[![Watch the video](https://img.youtube.com/vi/3TNASbzBNlQ/0.jpg)](https://www.youtube.com/3TNASbzBNlQ)
+
+
+---
 
 This is the first in Spreadsheet fundamentals.
 
