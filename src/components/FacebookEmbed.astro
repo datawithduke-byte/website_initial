@@ -1,26 +1,47 @@
 ---
 interface Props {
-  url: string;
+  url: string; // Reel URL (Updated in index.astro)
 }
-
 const { url } = Astro.props;
+const encodedUrl = encodeURIComponent(url);
 ---
 
-<div id="fb-root"></div>
-
-
-<div class="fb-video" data-href={url} data-show-text="false">
-  <blockquote class="fb-xfbml-parse-ignore" cite={url}>
-  <a href={url}>View this post on Facebook</a>
-  </blockquote>
+<div class="facebook-embed-wrapper">
+  <iframe
+    src={`https://www.facebook.com/plugins/post.php?href=${encodedUrl}&show_text=false`}
+    class="facebook-embed-iframe"
+    scrolling="no"
+    frameborder="0"
+    allowfullscreen="true"
+    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+  </iframe>
 </div>
 
 <style>
-  /* Force Facebook embeds to respect container width */
-  .fb-video iframe {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-  }
-</style>
+.facebook-embed-wrapper {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
 
+.facebook-embed-iframe {
+  border: none;
+  width: 100%;
+  min-height: 550px; /* fallback for desktop */
+}
+
+/* On smaller screens, reduce height proportionally */
+@media (max-width: 768px) {
+  .facebook-embed-iframe {
+    min-height: 400px;
+  }
+}
+@media (max-width: 480px) {
+  .facebook-embed-iframe {
+    min-height: 360px;
+  }
+}
+</style>
