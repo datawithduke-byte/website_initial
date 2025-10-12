@@ -9,6 +9,8 @@ youtubeId: "CjciqTea7Nk"
 ## Watch the video on YouTube
 [![Watch the video](https://img.youtube.com/vi/CjciqTea7Nk/0.jpg)](https://www.youtube.com/watch?v=CjciqTea7Nk)
 
+# Episode 1 - What even *is* Data?
+
 ## Summary
 Ever counted biscuits, checked your steps, or argued with Netflix about your “top picks”? Congrats — you’re already using data. In this first episode of Data with Duke, we break down what data actually is, why you’re surrounded by it, and why it’s not just for techies with three monitors.
 

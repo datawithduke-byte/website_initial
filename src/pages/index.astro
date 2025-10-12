@@ -71,8 +71,16 @@ const LS_YT_ID = latestLesson?.youtubeId || "CjciqTea7Nk";
     <aside>
       <div class="card">
         <h3 style="margin-top:0;">Recent Blog Posts</h3>
-        {posts.map(p => <BlogCard post={p} />)}
-        <a class="btn" href="/blog/">View all</a>
+        {posts.map(p => (
+          <BlogCard
+            title={p.title}
+            summary={p.summary}
+            image={p.image}
+            date={p.date}
+            url={`/blogs/${p.slug || p.url.split("/").filter(Boolean).pop()}/`}
+          />
+        ))}
+        <a class="btn" href="/blogs/">View all</a>
       </div>
 
       <div class="card">
@@ -85,7 +93,7 @@ const LS_YT_ID = latestLesson?.youtubeId || "CjciqTea7Nk";
     <section>
       <h2>Episodes</h2>
       <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
-        {episodes.slice(0,6).map(e => <EpisodeCard episode={e} />)}
+        {episodes.slice(0,3).map(e => <EpisodeCard episode={e} />)}
       </div>
       <p style="margin-top:12px;"><a class="btn" href="/episodes/">Browse all episodes</a></p>
     </section>

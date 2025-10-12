@@ -13,6 +13,9 @@ youtubeId: "IEcNkgKZ0K8"
 
 # Episode 3 – 'Trust me, I've got the data'
 
+## Summary
+
+
 Open the news lately and it's a buffet of statistics. **Everyone has got data.**
 Politicians with bar charts, campaigners with pie charts and influencers on TikTok with more graphs than a GCSE math revision week. You can't move for claims that the data proves it. 
 

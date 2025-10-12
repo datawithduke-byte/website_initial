@@ -26,3 +26,45 @@ header.site { border-bottom:1px solid var(--border); }
 footer.site { border-top:1px solid var(--border); color:var(--muted); }
 hr { border:0; border-top:1px solid var(--border); margin:24px 0; }
 img.logo { height:42px; width:auto; }
+
+.blog-featured {
+  margin-bottom: 3rem;
+}
+
+.blog-card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ---- Blog list ---- */
+.blog-list-ul {
+  list-style: none;            /* removes bullet points */
+  padding-left: 0;
+  margin: 0;
+}
+
+.blog-list-ul li {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+}
+
+.blog-list-ul li:last-child {
+  border-bottom: none;
+}
+
+.blog-list-ul a {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.blog-list-ul a:hover {
+  color: var(--primary);
+}
+
+.blog-list-summary {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}

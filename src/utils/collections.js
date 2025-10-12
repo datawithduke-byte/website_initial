@@ -52,9 +52,9 @@ export async function getLessons() {
 }
 
 export async function getBlogPosts() {
-  const modules = import.meta.glob('/src/pages/blog/*.md', { eager: true });
+  const modules = import.meta.glob('/src/content/blogs/*.md', { eager: true });
   return Object.entries(modules).map(([path, mod]) => {
-    const url = path.replace('/src/pages', '').replace('.md','/');
+    const url = path.replace('/src/content', '').replace('.md','/');
     return { url, ...(mod.frontmatter || {}), Content: mod.default };
   }).sort((a,b) => new Date(b.date) - new Date(a.date));
 }

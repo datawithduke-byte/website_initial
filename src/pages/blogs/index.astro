@@ -1,0 +1,47 @@
+---
+import Base from "../../layouts/Base.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import { getBlogPosts } from "../../utils/collections.js";
+
+const blogs = await getBlogPosts();
+const latestThree = blogs.slice(0, 3);
+const slugFromUrl = (url) =>
+  url ? url.split("/").filter(Boolean).pop() : "unknown";
+
+---
+
+<Base title="Blog">
+  <h1>Blog</h1>
+
+  <!-- Featured section: recent 3 as cards -->
+  <section class="blog-featured">
+    <h2>Latest Blogs</h2>
+    <div class="blog-card-grid">
+      {console.log(blogs)}
+      {latestThree.map(blog => (
+        <BlogCard 
+          title={blog.title}
+          summary={blog.summary}
+          image={blog.image}
+          date={blog.date}
+          url={`/blogs/${blog.slug || slugFromUrl(blog.url).filter(Boolean).pop()}/`}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Full list -->
+  <section class="blog-list">
+    <h2>Older Blogs</h2>
+    <ul class="blog-list-ul">
+      {blogs.slice(3).map(blog => (
+        <li>
+          <a href={`/blogs/${blog.slug || slugFromUrl(blog.url)}/`}>
+            {blog.title}
+            {blog.summary && <p class="blog-list-summary">{blog.summary}</p>} </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+

@@ -1,10 +1,12 @@
 ---
-layout: ../../layouts/Base.astro
 title: "Hi, and Welcome!"
 date: 2025-08-28
 summary: "A bit about me; and why I'm doing this."
+slug: "hello_and_welcome"
 exclusive: true
 ---
+## Are we sitting comfortably?
+
 Everything's gotta have a beginning, but sometimes in life as well as in Data, knowing how to start is often the biggest challenge. 
 
 But where would we be without A, B, C or 1, 2, 3? Or even Do, Re, Mi?

@@ -1,0 +1,27 @@
+---
+import { getBlogPosts } from "../../utils/collections.js";
+import Base from "../../layouts/Base.astro";
+
+export async function getStaticPaths() {
+  const blogs = await getBlogPosts();
+  return blogs.map(e => ({
+    params: { slug: e.url.split("/").filter(Boolean).pop() }, // last part of URL
+    props: { blog: e }
+  }));
+}
+
+const { blog } = Astro.props;
+const { title, summary, date, image } = blog;
+---
+<Base title={title} description={summary}>
+  <article class="blog-post">
+    <h1>{title}</h1>
+    {date && <p class="post-date">{new Date(date).toLocaleDateString()}</p>}
+    {summary && <p class="post-summary">{summary}</p>}
+
+    <div class="content">
+      <blog.Content />
+    </div>
+  </article>
+</Base>
+

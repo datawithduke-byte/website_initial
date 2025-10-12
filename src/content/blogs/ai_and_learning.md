@@ -1,12 +1,12 @@
 ---
-layout: ../../layouts/Base.astro
 title: "AI is a tech wonder for the ages; but..."
 date: 2025-10-05
 summary: "What does a recent MIT study mean for the use of AI in industry and education settings across the world? Is there a link between AI usage and learning?"
+slug: "ai_and_learning"
 exclusive: true
 external: true
 ---
-# ...is AI killing brains?
+## ...is AI killing brains?
 
 So I've touched on it a little recently but aside from data, data literacy, statistics and technology, I'm also deeply interested in AI. Specifically the recent(ish) surge on popularity of LLMs and similar tools.
 

@@ -1,8 +1,8 @@
 ---
-layout: ../../layouts/Base.astro
 title: "The Future is Scary!"
 date: 2025-09-07
 summary: "But progress is never slow, provided it's forward"
+slug: "making_habits"
 exclusive: true
 external: true
 ---

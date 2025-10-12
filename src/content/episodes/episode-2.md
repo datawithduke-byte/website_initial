@@ -9,6 +9,8 @@ youtubeId: "U4-nloIguAc"
 ## Watch the video on YouTube
 [![Watch the video](https://img.youtube.com/vi/U4-nloIguAc/0.jpg)](https://youtu.be/U4-nloIguAc)
 
+# Episode 2 - Data in your pocket
+
 ## Summary
 Ever wonder how your phone seems to listen to you? Or how Spotify knows what tunes you need just at that moment? You ever wondered how Supermarket loyalty cards can sometimes give you AMAZING deals??
 It's all in the data that you are generating by doing, or sometimes NOT doing certain things that are just habit for you.
