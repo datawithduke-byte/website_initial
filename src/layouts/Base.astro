@@ -1,6 +1,9 @@
 ---
 import "../styles/theme.css";
-const { title = 'Home', description = 'Podcast & portfolio hub' } = Astro.props;
+const { title = "Data with Duke"
+  , description = "Learn data, analytics, and tech with Duke – tutorials, podcasts, and practical guides."
+  , image = "/images/default-og.png" 
+} = Astro.props;
 import Header from "../components/Header.astro";
 ---
 
@@ -10,8 +13,37 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} • {import.meta.env?.SITE_NAME ?? 'Data With Duke'}</title>
     <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content={title || "Data with Duke"} />
+    <meta property="og:description" content={description || "Learn data, analytics, and tech with Duke – tutorials, podcasts, and practical guides."} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://datawithduke.com${Astro.url.pathname}`} />
+    <meta property="og:image" content={image || "/default-og.png"} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title || "Data with Duke"} />
+    <meta name="twitter:description" content={description || "Learn data, analytics, and tech with Duke – tutorials, podcasts, and practical guides."} />
+    <meta name="twitter:image" content={image || "/default-og.png"} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Data with Duke",
+        "url": "https://datawithduke.com",
+        "logo": "https://datawithduke.com/favicon.png",
+        "sameAs": [
+          "https://www.youtube.com/@data_with_duke",
+          "https://www.facebook.com/datawithduke",
+          "https://www.instagram.com/datawithduke"
+        ]
+      })}
+    </script>
   </head>
   <body>
     <Header />

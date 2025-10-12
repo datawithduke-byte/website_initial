@@ -9,6 +9,11 @@
     "preview": "astro preview",
     "format": "prettier --write ."
   },
-  "dependencies": { "astro": "^4.13.0" },
-  "devDependencies": { "prettier": "^3.3.3" }
+  "dependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "astro": "^4.13.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
 }

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://datawithduke.com/sitemap-index.xml

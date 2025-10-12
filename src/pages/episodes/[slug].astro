@@ -13,20 +13,6 @@ const { episode } = Astro.props;
 ---
 
   <article>
-    <!-- <h1>{episode.title}</h1>
-    <p style="color:var(--muted);">{new Date(episode.date).toLocaleDateString()}</p>
-    <p>{episode.summary}</p> -->
-
-    <!-- <div style="aspect-ratio:16/9; width:100%; margin:1rem 0;">
-      <iframe
-        style="width:100%; height:100%; border:0; border-radius:12px;"
-        src={"https://www.youtube.com/embed/" + episode.youtubeId}
-        title={episode.title}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
-    </div> -->
-
     <episode.Content />
   </article>
 
