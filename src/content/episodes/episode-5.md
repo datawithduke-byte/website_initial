@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Base.astro
 title: "Why are Cookies so Expensive?? | Data with Duke Ep.5"
+slug: "what-are-cookies"
 date: 2025-11-02
 summary: "Today we dig into the reason why Cookies... as in Internet Cookies have become so valuable lately. Organisations have opted to charge you for their content if you don't want to have a little text file on your browser. This episode aims to break down some facts about what these little files are, and why they don't smell as good as the other types of cookies. Follow on Facebook & Instagram for quick spreadsheet tips and data literacy shorts"
 tags: ["data podcast", "data with duke", "tidy data", "messy data", "data basics", "data literacy", "data organisation", "clean data", "spreadsheets", "excel tips", "google sheets", "data governance", "data culture", "data quality", "data cleaning", "data management", "everyday data", "data careers", "educational podcast", "tech podcast"]

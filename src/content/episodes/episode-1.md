@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/Base.astro
 title: "What Even Is Data? | Data with Duke Ep.1"
+slug: "what-is-data"
 date: 2025-08-27
 summary: "In this one, we’re asking the big, simple question: What even is data? Spoiler: you’ve been using it every single day, whether you realise it or not."
 tags: ["intro", "trailer"]

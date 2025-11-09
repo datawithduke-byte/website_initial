@@ -8,7 +8,7 @@ youtubeId: "C-9y6qHKWM8"
 category: "Spreadsheets"
 ---
 ## Watch the video on YouTube
-[![Watch the video](https://img.youtu.be/C-9y6qHKWM8/0.jpg)](https://youtu.be/C-9y6qHKWM8)
+[![Watch the video](https://img.youtube.com/vi/C-9y6qHKWM8/0.jpg)](https://youtu.be/C-9y6qHKWM8)
 
 
 ---

@@ -28,7 +28,7 @@ export async function getEpisodes() {
         ...fm,
         Content: mod.default,
         _ts: toTimestamp(fm.date),
-        _slug: path.toLowerCase(),
+        _slug: fm.slug ? `/episodes/${fm.slug}/` : path.toLowerCase(),
       };
     })
     // date desc, then slug asc for stability
