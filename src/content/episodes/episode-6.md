@@ -1,97 +1,313 @@
 ---
 layout: ../../layouts/Base.astro
-title: "Why are Cookies so Expensive?? | Data with Duke Ep.5"
-slug: "what-are-cookies"
-date: 2025-11-02
-summary: "Today we dig into the reason why Cookies... as in Internet Cookies have become so valuable lately. Organisations have opted to charge you for their content if you don't want to have a little text file on your browser. This episode aims to break down some facts about what these little files are, and why they don't smell as good as the other types of cookies. Follow on Facebook & Instagram for quick spreadsheet tips and data literacy shorts"
-tags: ["data podcast", "data with duke", "tidy data", "messy data", "data basics", "data literacy", "data organisation", "clean data", "spreadsheets", "excel tips", "google sheets", "data governance", "data culture", "data quality", "data cleaning", "data management", "everyday data", "data careers", "educational podcast", "tech podcast"]
-youtubeId: "D5TUlseh9ds"
+title: "Is Healthcare Data any good? | Data with Duke Ep.6"
+slug: "health-data"
+date: 2026-01-03
+summary: "Welcome back! In this episode, I explain my slightly (hopefully) forgivable absence with a short dive into Health Data.Throughout the episode, we discuss: Why is health data so valuable? How can it go so well sometimes and others... not so much. A short intro into the fabled Google Flu Trends case study. How the UK actually did good on some health data.The risks with health data including the minefield of ethics"
+tags: ["data podcast", "data with duke", "health data", "nhs data", "google flu trends", "health wearables", "apple watch", "data literacy", "data organisation", "clean data", "spreadsheets", "excel tips", "google sheets", "data governance", "data culture", "data quality", "data cleaning", "data management", "everyday data", "data careers", "educational podcast", "tech podcast"]
+youtubeId: "R6yGGVa-VUM"
 ---
 ## Watch the video on YouTube
-[![Watch the video](https://img.youtu.be/D5TUlseh9ds/0.jpg)](https://youtu.be/D5TUlseh9ds)
+[![Watch the video](https://img.youtu.be/R6yGGVa-VUM/0.jpg)](https://youtu.be/R6yGGVa-VUM)
 
 ---
 
-# Episode 5 – Why are Cookies so Expensive??
+# Episode 6 – Health data isn't THAT important...right??
 
-## Summary
+---
 
-Today we dig into the reason why Cookies... as in Internet Cookies have become so valuable lately. Organisations have opted to charge you for their content if you don't want to have a little text file on your browser. This episode aims to break down some facts about what these little files are, and why they don't smell as good as the other types of cookies
-
-## Transcript: 
+## Transcript
 
 ### Intro
 
-So, if I was to say the word cookie to you, what would that actually mean? Are you already drooling at the potential aroma of a warm baked oat and chocolate chip delight? Or are you actually more interested in the value that a particular cookie can give you? And I'm not just talking about the edible cookies. I'm talking about cookies that you'll find on a website. This is something that you'll probably have heard of. If you spend less than five minutes on the internet, you will know that there are something called cookies. But do you actually know what they are? And most importantly, do you know why they are so valuable to organizations?
+Hello and welcome back to **Data with Duke** — the show where we take all things data, boil them gently for 20 minutes, season with sarcasm, and serve piping hot insights that even your nan could understand.
 
-### Context
+And to those who noticed… yep. I’ve been away for a few weeks. You’re absolutely right. I’ve been ill — *proper* ill. The sort of ill where even your dog looks at you like, “Mate… pull yourself together.”
 
-Hello there everybody, so my name is Duke. I have been working this podcast for a little while. I am a little bit late. I've been quite busy in work, like no excuses, but I've been extremely busy in work and actually this has taken a little bit of a backburner, but I've come out hard. We've got a couple of new videos available on the social media pages. Go and check those out. Just search data with Duke. If I exist, you will find me there. But also, please, folks, go and check out the website. There's lots of content being shown on there. And one of the content items that we're showing on there is that I'm writing little blogs every now and then. Just thoughts have sort of come into my head. And actually, the most recent blog is what's inspired today's little podcast.
+I spent about a fortnight (maybe three weeks) in the biological equivalent of a Windows 95 error screen, and it got me thinking: let’s do an episode about **health data** — the good, the bad, and the embarrassingly optimistic.
 
-And what I want to specifically talk about is why we're seeing such a big change lately different organizations, different web-based organizations who are now charging you if you do not want to have cookies. So let me give you some examples. And like I said, go and read the blog. You'll find some examples for more. News and tabloid sites started doing this a couple of months ago probably I noticed it might have been a little bit longer that I probably be scrolling social media and somebody would link to a page or even the newspaper or the tabloid themselves would have their own page and they'll say, have a look at this headline and it'll probably be a bit like clickbaity. Let's go and find out some more information about this. and you click on the link and it takes you to the website.
+I actually prepared this episode weeks ago… and then Christmas happened. Which, as we know, requires planning, logistics, and alcohol. Now it’s early January, I’m still not 100%, but I’m upright and vaguely coherent — so let’s do this.
 
-And previously, what it would say is that, would you like to accept all cookies or would you like to maybe customize what cookies you want to use or are you going to reject them all? And I don't know if you're anything like me is that my response would actually vary depending on what sort of site that I'm looking at. And to be honest with you, I... used to pay quite a lot of attention to it as that if I trusted the site, if I thought the site was actually worth value to me, then I'd say, yeah, do you know what, let me click accept. You can have my data, that's really, really fine. But if they're one of the websites that I'm a little less interested, trusting of or certainly if it's one of those sort of sketchy clickbaity click on this link and we'll tell you what flavour ice cream you are I'd probably be a little bit less accepting of the cookies in that case, even if they could tell me that what I know all along is, of course, going to be mint choc chip.
+Quick note: I’ll probably do another episode next week (or the week after) about **New Year’s resolutions**, so send yours in. Drop a comment, contact me through the website… whatever works.
 
-So anyway, what's this about? We're going to talk about cookies and why cookies are actually so valuable.
+Right. Back to the one I actually prepared.
 
-### What is a Cookie?
+Today we’re talking about **how data is used in health in the UK and around the world**. We’ll cover heroic success stories, catastrophic failures, and Google’s brave-but-dodgy attempt at becoming Dr House.
 
-So let me explain what a cookie is, first of all, and then I'll talk about why these organizations, why newspapers, and now even Facebook, if you're in the UK or one of the European countries that are originally signed up for a GDPR, you will see that Facebook is now actually going down that option as well. The company owned by Meta that said many times over, we will never charge for the use of Facebook, despite what all of those little clickbaity... *That's the word of the day, **clickbaity**.* Those posts that you'd see, like every couple of years, it would crop up. Facebook is going to start charging $7.99 per month, blah, blah, blah, blah, blah. And you have to copy and paste this particular bit of text in order to stop it from happening. And it was all a load of rubbish, folks. If anyone's ever fallen for that, it's a load of rubbish. But Facebook has always said in response to those things that come up every couple of years, we have never and we will never charge... [except now they **are charging**](https://about.fb.com/news/2025/09/facebook-and-instagram-to-offer-subscription-for-no-ads-in-the-uk/). *Post production note: to be more specific, they are charging for no ads... but the principle remains the same*
+That’s right: **Google Flu Trends is back, baby.**
 
-They are charging if you choose to not have **'advert'** cookies when you were using the app.
+So grab your Lemsip, buckle up, and let’s talk about the times data has saved lives… and the times it quietly ruins somebody’s afternoon.
 
-### How do Cookies work?
+---
 
-So I'm going to explain what cookies are and how they sort of like work. This might get a little bit technical, folks, but please stick with me. I'll try and keep it as simple as I possibly can to sort of like help you understand. And then that will link on then as to actually exactly why they are so valuable. So... A cookie is effectively, an internet cookie is effectively a tiny text file that a website will store into your browser. So you open your browser, it could be Edge, could be Chrome, could be Brave, could be, I don't know what else is out there. Opera? Internet Explorer, I think is probably dead now, but some people are probably still using that. So whatever browser you use, you visit a website. And within, when you go to a website and you search [datawithduke.com](datawithduke.com) when you hit enter, the way that your browser actually works is that sends a request to the server. It goes and finds the server that holds that website and it'll say, oh, send me all the data that I need in order to be able to use this website.
+### Health data: what it is and why it matters
 
-And as part of that data that it sends is that a tiny tiny little text file that stores information in your browser and it could be quite simple data it can be things like oh this is a user id that we recognize based on the ip address maybe we've seen this person before. So we know that this is a user ID that we can send as part of the cookie. And we also know that this person likes the theme of the website to be in dark mode. So we'll include that as well within the cookie. It may also include something called a session token. A bit more onto that later. So this tiny little text file that has been stored in your browser and it just holds small bits of information about basically your preferences usually about how you like to use the actual website.
+Let’s start with the basics — or, in other words, why doctors love spreadsheets as much as… systems. Symptoms. I meant symptoms. But honestly, both.
 
-So you go away for a couple of days and then you come back and just think, oh, wait a minute, there was that website that I was on the other day wasn't there and it was going to tell me what flavor ice cream I was, but I got busy hung up on answering some sort of IQ test. Right. So you navigate back to that website again, either through your history, your Google search it again, or whichever method you actually do it. And then when you go to that website, you search for the website and you hit enter and you say send me all the information that I need to run that website, same as before.
+Health data is everywhere. If data had a Tinder profile, the NHS alone would be swiping right so fast it would get carpal tunnel.
 
-Only this time, when it sends the information, it says, oh, wait a minute, we've got some data on this person on this website. So we're now going to use that data that's stored within that text file to help personalize your viewing. So again, this could be like logged in information. It could be like visualization. Are you zoomed in a little bit? You do use a particular color scheme when you're on the website. Have you filled something in on a form that you might want to come back to a little bit later? Are you saving things like email address and password to actually log into your the site itself. That's all sort of stored within these cookies. And the purpose of it being is that actually they are supposed to make using the internet just an awful lot easier.
+We’re talking:
 
-### Different types of Cookies?
+* Electronic health records
+* Hospital Episode Statistics
+* Public health surveillance
+* Genomic sequencing
+* Wearables… including the Fitbit you bought in 2019 and haven’t charged since
 
-So what's with all the hassle? If it's supposed to make our life a little bit easier, why is there such a big fuss over it? Well, okay, so not all cookies are created equal. And any of you who's actually ever shopped in Harrod's might actually know this. I've had the pleasure once, and I am still dreaming. I'm still dreaming of those buttery shortbreads that I had from there that time. Has anyone ever indulged? Please tell me, folks. It's superb. Anyway, I digress.
+In the UK, the NHS is one of the world’s largest, slightly creaky, semi-magical data systems. Millions of interactions create data: appointments, prescriptions, X-rays, A&E visits, and the occasional “I accidentally swallowed a keyring” story.
 
-So I'm going to talk about four different types of cookies that actually potentially exist. So you've got... First of all, it's a session cookie. They call it a session. So a session is almost like a session of using that particular website. So you log into your computer, you turn your computer on, you log into your profile, you open up your browser, and you go to a website. The cookies that are actually transferred during that will then disappear when you close the browser or switch your computer off. Those session cookies are used for temporary things, like keeping you logged in. so that if you log in and then you maybe click off the web page or whatever, but you still get the browser open, the session cookies can maintain. And that means that you can open up another tab again and go to that same website and you're still logged in. Wonderful. They really help you. Session cookies. Close the website, sorry, close the browser, switch off your PC, session cookies disappear. You have to log back in again when you go back to the website on your next session. That's the way that they work.
+Globally, health data helps governments identify outbreaks, plan vaccination programmes, predict winter pressures, and work out whether Karen’s symptoms mean she’s allergic to gluten… or whether she just needs a glass of water and to stop Googling things at 3am.
 
-You've then got things like persistent cookies and persistent cookies will stay on your device until they either expire, they could be set like a time frame or they could be deleted. They could stay there until you actually delete them. They could be useful for like remembering preferences, like I said, about things like about color schemes that you like particularly or if you like certain things to show and you're using a web application that has certain features on the front page or that sort of thing. That could be done through the use of persistent cookies.
+But the big story — the one that really defines what happens when data gets above its station — is **Google Flu Trends**.
 
-Then you have first party cookies, and those are the ones that are set by the site that you're visiting. So you go to datawithduke.com and you accept the cookies. Those cookies come from datawithduke.com. That's where they actually come from.
+---
 
-But then you've got third party cookies. These are the important ones, and that's what I'm going to be talking about today. Food party cookies are set by somebody else's domain. And commonly, and now we're getting to the crux of it, that other domain will be an ad network that could be embedded on the site. An advert that is available on the site that puts a cookie onto your device, onto your computer, onto your phone, because you have seen that advert.
+### Google Flu Trends: Big Data meets Big Oopsie
 
-### So what's the problem with Ad cookies?
+I’ll link some good blogs and research papers in the show notes on **datawithduke.com**, because if you’re into big data case studies, this is one of the best you’ll ever find.
 
-And you're like, okay, all right, fine. Why is that important? So because cookies let site owners and in the important case advertisers are persistent, whether they're permanent there or whether they're just for a particular session. Okay. They can allow these advertisers to build a profile of your behavior. What that cookie is doing now is is able to track you from page to page to page. So these advertisers are now able to figure out, well, what pages are you actually visiting? What are you clicking? How long do you stay on a website? To some case, actually, what is your mouse doing? Are you hovering over that advert? Does the advert contain a video? How much of the video are you actually watching? If you go into, if you then click on an advert and you go onto a website, are you going to buy the product or do you nearly buy it? How far into the actual purchase program are you actually, the process, I should say, are you actually getting into? Have you got right through to the checkout or... did you actually skip and skip out before even to that stage.
+We need to go back to **2008**. Barack Obama has just been elected, everyone’s wearing oversized belts, and Google decides it wants to predict flu outbreaks using search data.
 
-### The Technology and Value of Ad Cookies
+This is before ChatGPT, before Gemini, and even before Google autocomplete became the mind-reading menace we all know today.
 
-Now this is where it gets really, really exciting and this is why it indicates towards (I say exciting from like a technology point of view), but this is how our advertising firms, our internet advertising firms really start to get a little bit of value from this because they are able to actually monitor the rest of your website behavior all the way throughout. And it's like gold dust to them. It is literally like gold dust because our companies out there who are creating these adverts and are putting these cookies onto your device and understanding and logging what you are actually doing on the internet is going to be used for understanding customer behavior. And they'll then use that to actually drive in to optimize content on the website. But they could be used for marketing. They could be like retargeting ads. Like, have you ever put something into a basket on a website somewhere? And then you get an email that says, oh, you've left something in your basket, by the way. You might want to come and check it again. Or maybe personalization. How often have you ever been onto a website, maybe like a clothes website or a tech website or gadgets or something like that? And you've had a bit of a click around and you've had a browse around and you've decided not to buy anything that time. And then the next time you go onto that website, it says, oh, by the way, we know you like these things. Maybe you like these things as well. So it sounds pretty useful, it sounds pretty valuable to most sort of consumers.
+The idea was simple: if loads of people in a region start searching things like:
 
-But what's the downside of that? What's actually the downside? Well, let's be very, very clear is that you are being tracked through the internet. And therefore, if you're using particular pages, then these cookies, these other websites, these advertisers will know that you are doing that. And that makes some people feel a little bit uncomfortable, especially if you consider that within privacy policies of some of their websites is that you are allowing them by accepting the terms of use of their website for them to sell that data onto somebody else. Let me be really, really clear. In most cases, your actual personal data is anonymized. There is no way that you as an actual physical person, your name, your address, your phone number, your email address, can be tracked using these cookies... unless you have entered any of those things within a website and the privacy policy is a little bit sketchy and they start selling on your personal details to maybe other sales companies.
+* “flu symptoms”
+* “why do I feel like death”
+* “how long can a human survive on Lemsip alone”
 
-### It's an old game... What Cookies *used* to be.
+…then maybe there’s a flu outbreak happening right now. And crucially, maybe we can detect it **faster than traditional systems**.
 
-Now this is something that used to happen in the past, something that actually used to happen before the internet, that you'd go and purchase a product from somebody, like you'd go into a shop and You'd buy, I don't know, a jumper and they'd say, oh, fill in this form and you can have a free voucher for next time. And you put in your name and your address and your phone number. And all of a sudden, in a couple of weeks' time, you're getting letters and pamphlets through the door for another product. Maybe even the same or maybe even a different sort of company. Well, that's what's happening with cookies nowadays, that people are actually gathering your data based only probably on your IP address, but also potentially dependent on any data that you've physically and allowed to give them.
+Back then, outbreak detection relied heavily on the slow stuff: GPs, pharmacies, and public health reporting. By the time it got escalated, half the country had already sneezed their way through it.
 
-### Cookies today - it's not all bad
+So Google built [**Google Flu Trends (GFT)**](https://www.google.org/flutrends/about/) — a model that looked at search patterns and estimated flu prevalence. It was supposed to be faster than traditional surveillance, and for a while…
 
-And they're selling that data onto other companies so that they can market to you directly. And a lot of people are not too comfortable with that. especially if you do not know how many partners that these companies actually have. You actually don't know who's got your data at this stage. And if you ever look at some of these websites and you go into the detail of the privacy policy, some of these websites, like newspaper and tabloid websites, have thousands. The advertisers that work in there have thousands of partners that they could be selling your data to. Let me be really, really clear. And I do mention this on the blog. Please go and read it. You'll find it on the website that actually, depending on the site and the web application itself, I don't mind giving them my data because sometimes it does actually give me a really good experience. And I've lost count of the amount of times where actually a product has been suggested to me based on my previous browsing that I thought, actually, do you know what? That's exactly what I need. And I will go away and I'll purchase it. And there we are. It's useful. I'm going to shop around everywhere and that sort of thing.
+…it actually worked.
 
-### Cookies today - it's not all good either
+Between **2008 and 2011**, GFT tracked flu trends surprisingly well — often quicker than the CDC. Everyone clapped. Headlines screamed “Big Data will replace epidemiologists!”
 
-But I've also seen it on the other side of things where certain things that I have browsed or certain things that I have clicked on have ended up following me around the internet from a website that actually I didn't really want that product. I wasn't really looking at it. You kind of tricked me, website, into looking at that product because it was one of your partners. And I was actually looking for something else. And then you've taken me down a route that I didn't particularly want to go down. So... This is where the value comes from, and this is why now so many companies are basically saying, actually, if you want to use our website, you have to let us give you cookies, because it's providing value for them, because they are literally either using it to actually market directly to you in order for you to buy something, or they're selling it to other people so that they can market directly to you in order for you to buy something.
+Somewhere, a thousand statistics professors sighed into their coffee.
 
-### Personal choice for Cookies
+GFT became the shiny new toy of digital epidemiology.
 
-And listen, if you're comfortable with that, as I said, it's something that's been going on for, well, maybe not centuries, but decades since long before the internet. But since the internet, it has become more and more and more advanced in their approaches. So just think twice before clicking on that accept all. Do I really trust this website? Do I know who their partners are? Do I know who they're actually going to be selling my data to? And if they don't, then if you don't, if you don't trust them, then you need to find an alternative, which could involve maybe finding some way to actually blocking the cookies that you said that you're going to accept, or maybe using some other method, or actually simply not using the web service at all. How I finished off my blog, as I said, go and read it, is that actually how these websites are going to continue doing things in the future when it comes to privacy policies and cookies and usage rights of a particular website itself. I think it's going to depend on how many people actually choose to ignore or not browse to those websites now that they are actually... demanding that you accept or charge for the alternative.
+And then, like most shiny toys, it got dropped down the stairs.
 
-### Is this a Cash Cow?
+---
 
-And I'd be curious to see in future reports as to how much revenue is actually being gained by people to say, nope, not having cookies, I will give you money instead. As my thoughts are, not that I've been down this route, maybe somebody can correct me on this, that if you want to pay, you need to set up an account. And therefore you've given them some of your data already anyway. Let us know what you think, folks. I think it's a bit of an interesting bit of a shake-up in the way that the internet itself is actually working nowadays. It's something I was quite shocked to see how quickly it sort of ramped up. Somebody somewhere has had this genius idea and now everybody's jumping on the bandwagon.
+### So what went wrong?
+
+Around **2012–2013**, GFT started massively **overestimating flu cases** — in some cases, double (or more) than reality.
+
+Why?
+
+Because **search behaviour does not equal illness**.
+
+People Google weird things:
+
+* out of concern
+* because someone coughed on the bus
+* because WebMD has convinced them they’ve got 15 minutes to live
+
+This is a perfect “correlation vs causation” case study. People searching “flu” doesn’t mean people *have* flu.
+
+But the funniest part is this:
+
+**Google broke Google Flu Trends by updating Google.**
+
+In 2012, Google expanded autocomplete and personalised suggestions. Suddenly, typing “why is my nose…” could autocomplete into “running flu symptoms death imminent click here”.
+
+And if you’ve never played the Google Autocomplete game, I recommend it. One rainy Sunday afternoon, try typing:
+
+* “why is my girlfriend…”
+* “why is my boyfriend…”
+
+It’s either comedy gold or a reason to never go online again.
+
+But here’s the point: autocomplete caused searches for flu-related terms to spike artificially. GFT didn’t know Google had changed; it just assumed flu had gone nuclear.
+
+And this is where big data often goes wrong: **correlations can appear by accident**.
+
+One famous example was that search terms like “high school basketball” ended up highly correlated with flu. Not because basketball gives you flu — but because basketball season overlaps with winter.
+
+GFT didn’t understand context. It just saw patterns and made confident guesses.
+
+Another problem: the model wasn’t being updated often enough. Google invested a lot, but not enough to keep it properly maintained.
+
+Big data is like milk: great when it’s fresh, tragic when it’s not.
+
+In the 2013 flu season, GFT overestimated peak flu cases by **over 140%**. It went from poster child of “big data will save the world” to poster child of **data hubris**.
+
+And then, in 2015, [Google Flu Trends was quietly discontinued.](https://doi.org/10.1126/science.1248506) No dramatic apology blog post. It just… stopped.
+
+Like a sad goldfish.
+
+---
+
+### Why does Google Flu Trends still matter?
+
+Because it taught us some brutal lessons:
+
+* Big data can’t replace traditional public health systems
+* Search behaviour is influenced by platform design, media, and trends
+* Models break when the world — or the input system — changes
+* If your model relies on autocomplete, maybe don’t stake epidemiology on it
+
+Still, as failures go, it’s educational… and strangely lovable. It’s one of those case studies that data scientists will be pointing at forever.
+
+---
+
+### UK health data wins: COVID-19 (yes, but the data bit)
+
+Right. I want to talk about something closer to home, because not everything is on fire.
+
+And yes, I’m going to mention COVID — but don’t turn me off yet. We’re focusing on **the data**, not the politics, and definitely not the “sing Happy Birthday while washing your hands” trauma.
+
+During the COVID pandemic, the UK became a global leader in a few major data areas.
+
+#### Genomic sequencing
+
+The [UK sequenced a huge number of SARS-CoV-2 samples](https://www.england.nhs.uk/statistics/facts-and-figures/) early on, helping identify variants earlier than many nations. That meant faster insight into what was spreading, how it was changing, and what symptoms were shifting.
+
+#### The COVID dashboard
+
+[The colour-coded national obsession.](https://coronavirus.data.gov.uk/)
+
+It became one of the most comprehensive public pandemic data portals in the world: daily updates, regional breakdowns, cases, hospitalisations, vaccinations, deaths. Not perfect — but building something that fast, that visible, updated daily… that’s not a small feat.
+
+#### The RECOVERY trial
+
+[Run by Oxford](https://www.recoverytrial.net/), this was one of the fastest and largest clinical trials in history, using adaptive trial design.
+
+It identified treatments that genuinely improved outcomes — and ruled out others that were being loudly promoted by people who were, let’s say, not especially qualified.
+
+Whatever your overall view of the response, from a data perspective the UK contributed massively — and that insight saved lives worldwide.
+
+---
+
+### Wearables and remote monitoring
+
+Now let’s talk about wearables.
+
+How many of you have got an Apple Watch, Fitbit, Samsung Watch, Google Watch… something along those lines?
+
+These devices produce real-time data:
+
+* Heart rhythm notifications
+* Glucose monitoring for diabetes
+* Blood oxygen sensors for respiratory issues
+* Sleep tracking (which I personally use)
+
+Someone close to me first discovered they were experiencing arrhythmia because their Apple Watch told them. [That’s not a gimmick — that’s early warning.](https://med.stanford.edu/appleheartstudy.html)
+
+Do wearables know your heart rate better than you do? Absolutely.
+Do they also occasionally panic because you walked up the stairs too fast? Also yes.
+
+They won’t replace doctors, but they can support early detection — [and we’ll see more of this in the coming years.](https://www.fitbit.com/global/us/research)
+
+---
+
+### Genomics and personalised medicine
+
+Think of things like:
+
+* ancestry DNA tests
+* 23andMe
+* population sequencing projects
+
+[Sequencing can help identify hereditary risk](https://www.genomicsengland.co.uk/initiatives/100000-genomes-project) and diagnose rare diseases earlier — sometimes years earlier than symptoms appear.
+
+Outside the UK, Iceland’s deCODE genetics is a well-known example of long-term population genomics research. Iceland also tends to show strong health outcomes — not purely because of data, obviously, but it certainly helps.
+
+---
+
+### Wastewater surveillance: yes, it’s gross, but it’s genius
+
+Stick with me.
+
+[Some countries analyse wastewater](https://www.cdc.gov/nwss/) to track levels of diseases like COVID, flu, RSV, norovirus, and even polio.
+
+That’s right: your toilet flush is now a public health instrument.
+
+No, you cannot opt out.
+
+---
+
+### When health data goes wrong
+
+Of course, it’s not all success stories.
+
+#### NHS data sharing and public trust
+
+Around 2013, [there was a plan to link GP records with hospital data](https://publications.parliament.uk/pa/cm201516/cmselect/cmhealth/328/328.pdf) to support research and reduce fragmentation.
+
+Sounds great… except the public felt blindsided. People panicked about privacy, and the project was eventually pulled.
+
+Moral of the story: if you surprise the British public with *anything* — even improved healthcare — we will revolt.
+
+#### IBM Watson (the cancer diagnosis AI)
+
+Watson was designed to support oncology decisions, but in testing it sometimes produced unsafe or incorrect recommendations. Eventually, doctors quietly asked it to leave the room.
+
+#### Algorithmic bias
+
+This one matters.
+
+[Healthcare algorithms have been found to underestimate disease risk in minority groups](https://www.science.org/doi/10.1126/science.aax2342), often because training data doesn’t represent the population properly.
+
+Bias isn’t a “whoops, try again” situation in healthcare. It can lead to underdiagnosis, wrong prioritisation, and systemic inequality — with deadly consequences.
+
+Ethics in health data isn’t optional. It’s the whole game.
+
+---
+
+### Why health data is so valuable… and so messy
+
+Health data is gold dust because it’s:
+
+* personal
+* predictive
+* useful for planning and cost reduction
+* powerful for research and treatment discovery
+
+But it’s also messy because it’s:
+
+* fragmented across systems
+* inconsistent
+* ethically sensitive
+* full of missing values
+* entered by tired humans at 4am after a double shift
+
+Health data can be the dream dataset.
+
+It is often the nightmare dataset.
+
+---
+
+### Lessons we’ve learned
+
+From Google Flu Trends to COVID dashboards:
+
+* Big data is powerful, but messy
+* Input quality matters (search behaviour ≠ clinical data)
+* Transparency matters — the public want to know how data is used
+* Models should support public health, not replace it
+* Keep models up to date, or you’re predicting the future using last year’s horoscope
+* Ethics is not optional
+
+---
 
 ### Outro
 
-What do you think about it? Have you avoided particular websites since this sort of use... of cookies has actually come in or have you found alternative ways to actually keep your data safe let us know in the comments below folks don't forget to go and read my blog on the website I look forward to seeing you uh in a couple of weeks for the next one. This is Duke, signing off.
+So no, data isn’t medicine… but it can and has saved lives.
+
+Health is one area where data genuinely makes the world better: detecting outbreaks, discovering treatments, understanding diseases we didn’t even have names for a few years ago.
+
+But we’ve also learned that technology companies aren’t public health agencies — and counting search queries doesn’t make you Dr Gregory House.
+
+As for me, I’m feeling pretty much better. Mostly what I needed was rest, fluids, and avoiding WebMD at all costs.
+
+Thanks for tuning in to **Data with Duke**. Stay safe, stay curious — and if you feel ill, don’t Google it. Call somebody with actual medical training.
+
+This is Duke, signing off.
+
+
