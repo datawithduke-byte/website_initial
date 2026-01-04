@@ -12,11 +12,30 @@ export async function getStaticPaths() {
 
 const { blog } = Astro.props;
 const { title, summary, date, image } = blog;
+
+// UK fallback (prevents "flash" of ISO for UK visitors)
+let ukFallback = "";
+if (date) {
+  const [y, m, d] = date.split("-").map(Number);
+  ukFallback = new Intl.DateTimeFormat("en-GB", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date(Date.UTC(y, m - 1, d)));
+}
 ---
 <Base title={title} description={summary}>
   <article class="blog-post">
     <h1>{title}</h1>
-    {date && <p class="post-date">{new Date(date).toLocaleDateString()}</p>}
+
+    {date && (
+      <p class="post-date">
+        <time datetime={date} data-date={date}>
+          {ukFallback || date}
+        </time>
+      </p>
+    )}
+
     {summary && <p class="post-summary">{summary}</p>}
 
     <div class="content">
@@ -24,4 +43,3 @@ const { title, summary, date, image } = blog;
     </div>
   </article>
 </Base>
-

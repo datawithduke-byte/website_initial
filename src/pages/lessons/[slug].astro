@@ -10,22 +10,20 @@ export async function getStaticPaths() {
 }
 
 const { lesson } = Astro.props;
+const dateISO = lesson.date;
+
+const [y, m, d] = dateISO.split("-").map(Number);
+const ukFallback = new Intl.DateTimeFormat("en-GB", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+}).format(new Date(Date.UTC(y, m - 1, d)));
+---
+<time datetime={dateISO} data-date={dateISO}>
+  {ukFallback}
+</time>
 ---
 
 <article>
-  <!-- <h1>{lesson.title}</h1>
-  <p style="color:var(--muted);">{new Date(lesson.date).toLocaleDateString()}</p>
-  <p>{lesson.summary}</p>
-
-  <div style="aspect-ratio:16/9; width:100%; margin:1rem 0;">
-    <iframe
-      style="width:100%; height:100%; border:0; border-radius:12px;"
-      src={"https://www.youtube.com/embed/" + lesson.youtubeId}
-      title={lesson.title}
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    ></iframe>
-  </div> -->
-
   <lesson.Content />
 </article>

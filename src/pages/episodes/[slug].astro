@@ -10,6 +10,18 @@ export async function getStaticPaths() {
 }
 
 const { episode } = Astro.props;
+const dateISO = episode.date;
+
+const [y, m, d] = dateISO.split("-").map(Number);
+const ukFallback = new Intl.DateTimeFormat("en-GB", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+}).format(new Date(Date.UTC(y, m - 1, d)));
+---
+<time datetime={dateISO} data-date={dateISO}>
+  {ukFallback}
+</time>
 ---
 
   <article>
